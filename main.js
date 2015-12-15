@@ -5,11 +5,27 @@ window.onload = function(){
 		height = canvas.height = window.innerHeight;
 
 
-	draw();
+		var v1 = new verletBody();
+		v1.setPosition(0,0);
+		v1.setVelocity(1,1);
+		console.log(v1.m_x, v1.m_y, v1.m_lastX, v1.m_lastY);
+		
+		v1.warpTo(2,2);
+		console.log(v1.m_x, v1.m_y, v1.m_lastX, v1.m_lastY);
 
-	function draw(){
+		v1.update();
+		console.log(v1.m_x, v1.m_y, v1.m_lastX, v1.m_lastY);
 
+		v1.setVelocity(0,0);
+		console.log(v1.m_x, v1.m_y, v1.m_lastX, v1.m_lastY);
 
-		requestAnimationFrame(draw);
-	}
+		var p1 = new point();
+		console.log(p1.m_x);
+		console.log(p1.get().x,p1.get().y)
+
+	// draw();
+
+	// function draw(){
+	// 	requestAnimationFrame(draw);
+	// }
 };
